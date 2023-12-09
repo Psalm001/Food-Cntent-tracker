@@ -11,6 +11,6 @@ This project reads a CSV file containing information about various Nigerian food
 3. **Create/Use an Existing File to Track Your Meal**
 4. **Visualize Tracked File**
 
-5. check the project to play around the code
+check the project to play around the code
    
 
