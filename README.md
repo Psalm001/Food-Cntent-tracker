@@ -11,6 +11,11 @@ This project reads a CSV file containing information about various Nigerian food
 3. **Create/Use an Existing File to Track Your Meal**
 4. **Visualize Tracked File**
 
-check the project to play around the code
+Methods through which you can visualize are:
+1. **INPUT CLASS OF FOOD LEVELS**
+2. **INPUT FOOD AND WE SPLIT TO ITS QUANTITY**
+
+The program as a whole returns a set of charts that shows the food content base on you inputs
+
    
 
