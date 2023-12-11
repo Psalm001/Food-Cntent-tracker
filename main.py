@@ -1,7 +1,7 @@
 
 from singleDay import *
 from wholeDAY import *
-from promptCONTINOUS import *
+from Prompts import *
 
 
 repetition=True

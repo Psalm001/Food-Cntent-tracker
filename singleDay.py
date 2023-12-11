@@ -1,4 +1,4 @@
-from promptSingle import *
+from Prompts import *
 
 
 

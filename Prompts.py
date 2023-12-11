@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from visualize import *
+import pandas as pd
 
 
 @dataclass
@@ -31,25 +32,36 @@ def prompt():
 #FOOD PROMPT
 def food_prompt():
     #prompt the user
-    FOODNAME=input("ENTER FOOD NAME: ")
+    foodname=input("ENTER FOOD NAME: ")
+    foodname_col=[]
+    foodname_col.append(foodname)
+    
+    
     print("\n")
-    CARBORHYDRATE=input("CARBORHYDRATE LEVEL: ")
-    PROTEIN=input("PROTEIN LEVEL: ")
-    FATS=input("FATS LEVEL: ")
-    MINERALS=input("MINERALS LEVEL: ")
-    WATER=input("WATER LEVEL: ")
+    
+    carbohydrate=input("CARBORHYDRATE LEVEL: ")
+    protein=input("PROTEIN LEVEL: ")
+    fats=input("FATS LEVEL: ")
+    minerals=input("MINERALS LEVEL: ")
+    water=input("WATER LEVEL: ")
+    
     food_data = {
-    'Carbohydrate (g)': CARBORHYDRATE,
-    'Protein (g)': PROTEIN,
-    'Fats (g)': FATS,
-    'Minerals (g)': MINERALS,
-    'Water (g)': WATER
+    #'foodname' : foodname,
+    'Carbohydrate (g)': carbohydrate,
+    'Protein (g)': protein,
+    'Fats (g)': fats,
+    'Minerals (g)': minerals,
+    'Water (g)': water
     }
     
     print("\n")
     
-    foodClassArray_df=pd.Series(food_data)
-    return foodClassArray_df 
+    foodClassArray_Sr=pd.Series(food_data)
+    foodClassArray_pd=pd.DataFrame(foodClassArray_Sr,columns=foodname_col)
+    
+    
+    
+    return foodClassArray_pd
 
 # INPUT METHOD1 PROMPT
 def inputMethod ():
@@ -66,14 +78,15 @@ def inputMethod ():
 
 # read file from data
 def read_file ():
-    FOODNAME=input("ENTER FOOD NAME : ")
+    foodname=input("ENTER FOOD NAME : ")
     file=pd.read_csv("food.csv")
 
     file.set_index("Food" , inplace=True)
     
-    if FOODNAME in file.index:
-        foodContent=file.loc[FOODNAME]
+    if foodname in file.index:
+        foodContent=file.loc[foodname]
         return foodContent
     else:
        print ("SORRY!! WE DO NOT HAVE INFO ABOUT THE FOOD")
     
+#print(food_prompt())

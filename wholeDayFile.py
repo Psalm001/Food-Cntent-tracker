@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from promptSingle import *
+from Prompts import *
 
 def file_prompt():
     user_prompt = """

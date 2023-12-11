@@ -1,13 +1,14 @@
 from singleDay import *
-from promptSingle import *
+from Prompts import *
 from visualize import *
+import pandas as pd
 
 
 def daily():
     count=[]
     counter=1
     for i in range(0,3):
-        print("CHOOSE METHOD FOR MEAL {counter}")
+        print(f"CHOOSE METHOD FOR MEAL {counter} ")
         actionValue=inputMethod()
         print(f"ENTER YOUR MEAL {counter}")
         if actionValue == "1":
@@ -23,43 +24,12 @@ def daily():
             continue
         
         counter+=1
-    for elements in count:       
-        count_df=pd.DataFrame(elements)
-        visualize(count_df)
-    
-    
-
-    
-    
-"""         
-count=[]
-    
-a=inputMethod()
-print(a)
-if a == "1":
-    a=food_prompt()
-    count.append(a)
-    
-print(count)
-#count.append(food_prompt())
-
-
-
-
- 
-for i in range(0,2):
-    
-    elif inputMethod() == "2":
-        read_prompt=read_file()
-        count.append(read_prompt)
+    food_df = pd.concat(count, axis=1)
+    food_mean=food_df.mean(axis=1)
+    visualize(food_mean)  
         
-print(count)     
-
-count=[]
-inputMethod()
-if inputMethod == "1":
-    food_prompt()
-    count.append(food_prompt())
     
-print(count)
-"""
+    
+
+daily()   
+    
