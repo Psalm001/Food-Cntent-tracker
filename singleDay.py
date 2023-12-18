@@ -1,4 +1,5 @@
 from Prompts import *
+from visualize import *
 
 
 
@@ -22,8 +23,10 @@ def singleMEAL ():
         return(visualized)
         
     elif a == "q":
-        print("quit")
+        return "quit"
     
     else :
-        print("incorrect input")
+        return "incorrect input"
+    
+
             

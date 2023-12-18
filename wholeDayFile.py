@@ -13,7 +13,7 @@ def file_prompt():
     if user_method == "1":
         filename = input("ENTER FILENAME: ").strip()
 
-        if not os.path.exists(f"{filename}.csv"):
+        if not os.path.exists( f"{filename}.csv"):
             # Create an empty file if it doesn't exist
             with open(f"{filename}.csv", 'w'):
                 pass
